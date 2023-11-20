@@ -13,17 +13,17 @@ import java.util.Objects;
 public abstract class Staff extends Person implements Identifiable, IPerformTask {
     public static final Logger LOGGER = LogManager.getLogger(Staff.class);
     protected Integer salary;
-    protected Integer age;
+    protected Integer clearanceLevel;
 
 
-    public Staff(String firstName, String lastName, String phoneNumber) throws InvalidPersonException {
-        super(firstName, lastName, phoneNumber);
+    public Staff(String firstName, String lastName, String identificationNumber) throws InvalidPersonException {
+        super(firstName, lastName, identificationNumber);
     }
 
-    public Staff(String firstName, String lastName, String phoneNumber, Integer salary, Integer age) throws InvalidPersonException {
-        this(firstName, lastName, phoneNumber);
+    public Staff(String firstName, String lastName, String identificationNumber, Integer salary, Integer clearanceLevel) throws InvalidPersonException {
+        this(firstName, lastName, identificationNumber);
         this.salary = salary;
-        this.age = age;
+        this.clearanceLevel = clearanceLevel;
     }
 
 
@@ -36,12 +36,12 @@ public abstract class Staff extends Person implements Identifiable, IPerformTask
         this.salary = salary;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getClearanceLevel() {
+        return clearanceLevel;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setClearanceLevel(Integer clearanceLevel) {
+        this.clearanceLevel = clearanceLevel;
     }
 
     @Override
@@ -50,14 +50,14 @@ public abstract class Staff extends Person implements Identifiable, IPerformTask
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Staff staff = (Staff) o;
-        return Objects.equals(salary, staff.salary) && Objects.equals(age, staff.age);
+        return Objects.equals(salary, staff.salary) && Objects.equals(clearanceLevel, staff.clearanceLevel);
     }
 
     @Override
     public String toString() {
         return "Staff{" +
                 "salary=" + salary +
-                ", age=" + age +
+                ", clearanceLevel=" + clearanceLevel +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", IdentificationNumber='" + IdentificationNumber + '\'' +
@@ -66,7 +66,7 @@ public abstract class Staff extends Person implements Identifiable, IPerformTask
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), salary, age);
+        return Objects.hash(super.hashCode(), salary, clearanceLevel);
     }
 
     public abstract void work();

@@ -33,7 +33,7 @@ public class RecordsAndAdministration extends Department{
         this.suspects = suspects;
     }
 
-    public void addPatient(Suspect suspect) {
+    public void addSuspect(Suspect suspect) {
         this.suspects.add(suspect);
     }
 

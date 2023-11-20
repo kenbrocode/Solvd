@@ -14,11 +14,11 @@ public class PoliceOfficer extends Staff implements IPerformTask {
     private String specialization;
     private String rank;
 
-    public PoliceOfficer(String firstName, String lastName, String phoneNumber, Integer salary, Integer age, String specialization, String rank) throws InvalidPersonException {
-        super(firstName, lastName, phoneNumber, salary, age);
+    public PoliceOfficer(String firstName, String lastName, String identificationNumber, Integer salary, Integer age, String specialization, String rank) throws InvalidPersonException {
+        super(firstName, lastName, identificationNumber, salary, age);
         this.specialization = specialization;
         this.rank = rank;
-        LOGGER.info("Create a new PoliceOfficer");
+        LOGGER.info("Create a new Police Officer");
     }
 
     public final String getSpecialization() {
@@ -57,7 +57,7 @@ public class PoliceOfficer extends Staff implements IPerformTask {
                 "specialization='" + specialization + '\'' +
                 ", rank='" + rank + '\'' +
                 ", salary=" + salary +
-                ", age=" + age +
+                ", clearanceLevel=" + clearanceLevel +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", IdentificationNumber='" + IdentificationNumber + '\'' +
@@ -66,7 +66,7 @@ public class PoliceOfficer extends Staff implements IPerformTask {
 
     @Override
     public void work() {
-        LOGGER.info("Can work as a doctor.");
+        LOGGER.info("Can work as a police officer.");
     }
 
     @Override

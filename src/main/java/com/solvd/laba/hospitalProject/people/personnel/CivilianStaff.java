@@ -66,7 +66,7 @@ public class CivilianStaff extends Staff {
                 ", category='" + category + '\'' +
                 ", hasEducation=" + hasEducation +
                 ", salary=" + salary +
-                ", age=" + age +
+                ", clearanceLevel=" + clearanceLevel +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", IdentificationNumber='" + IdentificationNumber + '\'' +

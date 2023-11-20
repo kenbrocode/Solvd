@@ -10,36 +10,36 @@ import java.util.Set;
 
 public class PoliceStationUtility {
 
-    // Utility method to print information about the policeStation
-    public static void printHospitalInfo(PoliceStation policeStation) {
+    // Utility method to print information about the police station
+    public static void printPoliceStationInfo(PoliceStation policeStation) {
         System.out.println("Police Station Information:");
         System.out.println("Name: " + policeStation.getName());
         System.out.println("Location: " + policeStation.getLocation());
-        System.out.println("Medical Departments: " + Arrays.toString(new List[]{policeStation.getMedicalDepartments()}));
-        System.out.println("Cafeterias: " + Arrays.toString(new List[]{policeStation.getCafeterias()}));
-        System.out.println("Pharmacies: " + Arrays.toString(new List[]{policeStation.getPharmacies()}));
-        System.out.println("Laboratories: " + Arrays.toString(new List[]{policeStation.getLaboratories()}));
-        System.out.println("Patients: " + Arrays.toString(new Set[]{policeStation.getPatients()}));
-        System.out.println("Employees: " + Arrays.toString(new List[]{policeStation.getEmployees()}));
+        System.out.println("Departments: " + Arrays.toString(new List[]{policeStation.getDepartments()}));
+        System.out.println("Police Garages: " + Arrays.toString(new List[]{policeStation.getPoliceGarages()}));
+        System.out.println("Patrol Department: " + Arrays.toString(new List[]{policeStation.getPatrolDepartments()}));
+        System.out.println("Forensic Laboratories: " + Arrays.toString(new List[]{policeStation.getForensicLaboratories()}));
+        System.out.println("Suspects: " + Arrays.toString(new Set[]{policeStation.getSuspects()}));
+        System.out.println("Staff: " + Arrays.toString(new List[]{policeStation.getStaff()}));
     }
 
-    // Utility method to add a new suspect to a specific medical department
-    public static void addPatientToMedicalDepartment(PoliceStation policeStation, String departmentName, Suspect suspect) {
-        RecordsAndAdministration[] recordsAndAdministrations = policeStation.getMedicalDepartments().toArray(new RecordsAndAdministration[0]);
+    // Utility method to add a new suspect to a specific department
+    public static void addSuspectToDepartment(PoliceStation policeStation, String departmentName, Suspect suspect) {
+        RecordsAndAdministration[] recordsAndAdministrations = policeStation.getDepartments().toArray(new RecordsAndAdministration[0]);
         for (RecordsAndAdministration department : recordsAndAdministrations) {
             if (department.getName().equals(departmentName)) {
-                department.addPatient(suspect);
+                department.addSuspect(suspect);
                 System.out.println("Suspect added to " + departmentName + " department.");
                 return;
             }
         }
-        System.out.println("Medical department with name " + departmentName + " not found.");
+        System.out.println("Department with name " + departmentName + " not found.");
     }
     // Utility method to print the list of staff in the policeStation
-    public static void printEmployeeList(PoliceStation policeStation) {
+    public static void printStaffList(PoliceStation policeStation) {
         List<Staff> staff;
         staff = null;
-        Arrays.sort(new List[]{policeStation.getEmployees()});
+        Arrays.sort(new List[]{policeStation.getStaff()});
         staff.forEach(employee -> System.out.println(employee.getLastName()));
     }
 

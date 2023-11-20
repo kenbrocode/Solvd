@@ -13,18 +13,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class PatrolDepartment extends Department {
-    public static final Logger LOGGER = LogManager.getLogger(PatrolDepartment.class);
+public class PatrolDivision extends Department {
+    public static final Logger LOGGER = LogManager.getLogger(PatrolDivision.class);
     private Map<String, Integer> inventory ;
     private static int inventoryCount = 0;
 
 
-    public PatrolDepartment(String name, LocalDate establishedDate) {
+    public PatrolDivision(String name, LocalDate establishedDate) {
         super(name, establishedDate);
         inventoryCount++;
 
         inventory = new HashMap<>();
-        LOGGER.info("Create a new PatrolDepartment");
+        LOGGER.info("Create a new PatrolDivision");
     }
 
     public Map<String, Integer> getInventory() {
@@ -64,13 +64,13 @@ public class PatrolDepartment extends Department {
     }
 
     public static void setInventoryCount(int inventoryCount) {
-        PatrolDepartment.inventoryCount = inventoryCount;
+        PatrolDivision.inventoryCount = inventoryCount;
     }
 
 
     @Override
     public void performGeneralDuties() {
-        LOGGER.info("PatrolDepartment is dispensing medications.");
+        LOGGER.info("PatrolDivision is dispensing medications.");
     }
 
 
@@ -82,7 +82,7 @@ public class PatrolDepartment extends Department {
 
     @Override
     public String toString() {
-        return "PatrolDepartment {" +
+        return "PatrolDivision {" +
                 "name='" + name + '\'' +
                 ", establishedDate=" + establishedDate +
                 ", inventory=" + inventory +

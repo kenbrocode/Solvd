@@ -24,9 +24,9 @@ public abstract class Person {
     }
 
 
-    public Person(String firstName, String lastName, String phoneNumber) throws InvalidPersonException {
+    public Person(String firstName, String lastName, String identificationNumber) throws InvalidPersonException {
         this(firstName, lastName);
-        this.IdentificationNumber = phoneNumber;
+        this.IdentificationNumber = identificationNumber;
     }
 
 
@@ -87,6 +87,6 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person [name=" + firstName + ", age=" + lastName + "]";
+        return "Person [name=" + firstName + ", clearanceLevel=" + lastName + "]";
     }
 }

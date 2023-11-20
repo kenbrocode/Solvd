@@ -20,11 +20,11 @@ public class PoliceStationMain {
 
     public static void main(String[] args) throws InvalidPersonException {
 
-        LOGGER.info("Welcome to PoliceStation application!");
+        LOGGER.info("Welcome to Police Station app!");
 
         // Create staff
         List<Staff> staff = new ArrayList<>();
-        staff.add(new ChiefOfPolice("John", "Doe", "123-456-7890", 50000, 35, "MBA", true));
+        staff.add(new ChiefOfPolice("Peter", "Parker", "123-456-7890", 50000, 35, "MBA", true));
         staff.add(new PoliceOfficer("Jane", "Smith", "987-654-3210", 80000, 40, "Cardiology", "Active"));
         staff.add(new CivilianStaff("Alice", "Johnson", "111-222-3333", 30000, 25, 1, "Pediatrics", true));
 
@@ -40,8 +40,8 @@ public class PoliceStationMain {
         policeGarages.add(new PoliceGarage("Small_Cafe", LocalDate.now(), 22));
 
         // Create Pharmacies
-        List<PatrolDepartment> pharmacies = new ArrayList<>();
-        pharmacies.add(new PatrolDepartment("Main_Pharmacy", LocalDate.now()));
+        List<PatrolDivision> pharmacies = new ArrayList<>();
+        pharmacies.add(new PatrolDivision("Main_Pharmacy", LocalDate.now()));
 
         // Create Labs
         List<ForensicLaboratory> laboratories = new ArrayList<>();
@@ -65,16 +65,16 @@ public class PoliceStationMain {
         System.out.println(policeStation);
 
         // Example 2: Print the inventory of the main pharmacy
-        policeStation.getPharmacies().get(0).addPharmInventory("Aspirin", 10);
-        policeStation.getPharmacies().get(0).addPharmInventory("Nurofen", 11);
-        policeStation.getPharmacies().get(0).addPharmInventory("Advil", 40);
+        policeStation.getPatrolDepartments().get(0).addPharmInventory("Aspirin", 10);
+        policeStation.getPatrolDepartments().get(0).addPharmInventory("Nurofen", 11);
+        policeStation.getPatrolDepartments().get(0).addPharmInventory("Advil", 40);
 
         LOGGER.info("Our updates PoliceStation :" + policeStation);
-        LOGGER.info("Main PatrolDepartment inventory: " + policeStation.getPharmacies().get(0).getInventory());
+        LOGGER.info("Main PatrolDivision inventory: " + policeStation.getPatrolDepartments().get(0).getInventory());
 
 
 //        try {
-//            policeStation.getPharmacies().get(0).removePharmInventory("Aspirin", 6);
+//            policeStation.getPatrolDepartments().get(0).removePharmInventory("Aspirin", 6);
 //        } catch (PharmacyInvalidEnventoryNumberException exception) {
 //            System.out.println("Invalid number of extracting inventory");
 //            exception.printStackTrace();
@@ -82,10 +82,10 @@ public class PoliceStationMain {
 //            System.out.println("NO this name in the pharmacy inventory");
 //            exception.printStackTrace();
 //        }
-//        LOGGER.info("Main PatrolDepartment inventory: " + policeStation.getPharmacies().get(0).getInventory());
+//        LOGGER.info("Main PatrolDivision inventory: " + policeStation.getPatrolDepartments().get(0).getInventory());
 //
 //        try {
-//            policeStation.getPharmacies().get(0).removePharmInventory("Aspirin", 6);
+//            policeStation.getPatrolDepartments().get(0).removePharmInventory("Aspirin", 6);
 //        } catch (PharmacyInvalidEnventoryNumberException exception) {
 //            System.out.println("Invalid number of extracting inventory");
 //            exception.printStackTrace();
@@ -103,10 +103,10 @@ public class PoliceStationMain {
 //        } catch (InvalidPersonException e) {
 //            throw new RuntimeException(e);
 //        }
-//        cardiology.getPatients();
+//        cardiology.getSuspects();
 //
 //        // Example 4: Print the list of staff in the policeStation
-//        for (Staff employee : policeStation.getEmployees()) {
+//        for (Staff employee : policeStation.getStaff()) {
 //            System.out.println(employee.getLastName());
 //        }
 
@@ -116,7 +116,7 @@ public class PoliceStationMain {
 
                 System.out.println("HOSPITAL ACTION:");
                 System.out.println("1. PoliceGarage ");
-                System.out.println("2. PatrolDepartment ");
+                System.out.println("2. PatrolDivision ");
                 //System.out.println("3. ForensicLaboratory ");
                 //System.out.println("4. Medical Department ");
                 System.out.println("5. Patients ");
@@ -143,7 +143,7 @@ public class PoliceStationMain {
                     if (actionCafe >= 1 && actionCafe <= 4) {
                         System.out.print("Enter the PoliceGarage Name: ");
                         cafeName = scanner.next();
-                        for (PoliceGarage each : policeStation.getCafeterias()) {
+                        for (PoliceGarage each : policeStation.getPoliceGarages()) {
                             if (each.getName().equals(cafeName)) {
                                 nameFound = true;
                                 currentCafe = each;
@@ -161,7 +161,7 @@ public class PoliceStationMain {
                             int capacity = scanner.nextInt();
                             LocalDate now = LocalDate.now();
                             PoliceGarage newCafe = new PoliceGarage(cafeName, now, capacity);
-                            policeStation.addCafeteria(newCafe);
+                            policeStation.addPoliceGarage(newCafe);
                             break;
                         case 2:
                             System.out.print("Enter the new Name: ");
@@ -179,7 +179,7 @@ public class PoliceStationMain {
                             currentCafe.clean();
                             break;
                         case 5:
-                            System.out.println("PoliceGarage List: " + policeStation.getCafeterias());
+                            System.out.println("PoliceGarage List: " + policeStation.getPoliceGarages());
                             break;
                     }
 
@@ -188,17 +188,17 @@ public class PoliceStationMain {
                     System.out.println("2. Rename");
                     System.out.println("3. Add Inventory");
                     System.out.println("4. Remove Inventory");
-                    System.out.println("5. Print PatrolDepartment List");
-                    System.out.print("Chose PatrolDepartment Action: ");
+                    System.out.println("5. Print PatrolDivision List");
+                    System.out.print("Chose PatrolDivision Action: ");
                     int actionPharmacy = scanner.nextInt();
 
                     String pharmName = "";
-                    PatrolDepartment currentPharm = null;
+                    PatrolDivision currentPharm = null;
                     boolean nameFound = false;
                     if (actionPharmacy >= 1 && actionPharmacy <= 4) {
-                        System.out.print("Enter the PatrolDepartment Name: ");
+                        System.out.print("Enter the PatrolDivision Name: ");
                         pharmName = scanner.next();
-                        for (PatrolDepartment each : policeStation.getPharmacies()) {
+                        for (PatrolDivision each : policeStation.getPatrolDepartments()) {
                             if (each.getName().equals(pharmName)) {
                                 nameFound = true;
                                 currentPharm = each;
@@ -206,24 +206,24 @@ public class PoliceStationMain {
                             }
                         }
                         if (actionPharmacy >= 2 && actionPharmacy <= 4 && !nameFound) {
-                            LOGGER.info("No this PatrolDepartment Name: " + actionPharmacy + " in the list of department. Nothing changed");
+                            LOGGER.info("No this PatrolDivision Name: " + actionPharmacy + " in the list of department. Nothing changed");
                             break;
                         }
                     }
                     switch (actionPharmacy) {
                         case 1:
                             LocalDate now = LocalDate.now();
-                            PatrolDepartment newPharma = new PatrolDepartment(pharmName, now);
-                            policeStation.addPharmacy(newPharma);
+                            PatrolDivision newPharma = new PatrolDivision(pharmName, now);
+                            policeStation.addPatrolDivision(newPharma);
                             break;
                         case 2:
                             System.out.print("Enter the new Name: ");
                             String newName = scanner.next();
                             currentPharm.setName(newName);
-                            LOGGER.info("PatrolDepartment Name: " + pharmName + " has been changed to " + newName);
+                            LOGGER.info("PatrolDivision Name: " + pharmName + " has been changed to " + newName);
                             break;
                         case 3:
-                            System.out.print("Enter the new PatrolDepartment Inventory: ");
+                            System.out.print("Enter the new PatrolDivision Inventory: ");
                             String newInvent = scanner.next();
                             System.out.print("Enter the Inventory Quantity: ");
                             int newQuant = scanner.nextInt();
@@ -237,7 +237,7 @@ public class PoliceStationMain {
                             currentPharm.removePharmInventory(remInvent, remQuant);
                             break;
                         case 5:
-                            System.out.println("PatrolDepartment List: " + policeStation.getPharmacies());
+                            System.out.println("PatrolDivision List: " + policeStation.getPatrolDepartments());
                             break;
                     }
                 } else if (action == 3) {  // LABORATIRY
@@ -269,9 +269,9 @@ public class PoliceStationMain {
                             System.out.print("Enter the medical department: ");
                             String departName = scanner.next();
                             boolean depExist = false;
-                            for (RecordsAndAdministration dep : policeStation.getMedicalDepartments()) {
+                            for (RecordsAndAdministration dep : policeStation.getDepartments()) {
                                 if (dep.getName().equals(departName)) {
-                                    dep.addPatient(newSuspect);
+                                    dep.addSuspect(newSuspect);
                                     depExist = true;
                                 }
                             }
@@ -288,7 +288,7 @@ public class PoliceStationMain {
                             boolean patientExist = false;
                             Suspect removedSuspect = null;
                             RecordsAndAdministration existDepartment = null;
-                            for (RecordsAndAdministration dep : policeStation.getMedicalDepartments()) {
+                            for (RecordsAndAdministration dep : policeStation.getDepartments()) {
                                 for (Suspect each : dep.getPatients()) {
                                     if (each.getLastName().equals(lName) && each.getFirstName().equals(fName)) {
                                         patientExist = true;
@@ -299,7 +299,7 @@ public class PoliceStationMain {
                             }
                             if (patientExist) {
                                 existDepartment.removePatient(removedSuspect);
-                                policeStation.getPatients().remove(patientExist);
+                                policeStation.getSuspects().remove(patientExist);
                             } else {
                                 LOGGER.error("No such a patient in a policeStation");
                             }
@@ -311,7 +311,7 @@ public class PoliceStationMain {
                             lName = scanner.next();
                             boolean patientExistOld = false;
                             Suspect desSuspect = null;
-                            for (RecordsAndAdministration dep : policeStation.getMedicalDepartments()) {
+                            for (RecordsAndAdministration dep : policeStation.getDepartments()) {
                                 for (Suspect each : dep.getPatients()) {
                                     if (each.getLastName().equals(lName) && each.getFirstName().equals(fName)) {
                                         patientExistOld = true;     // set if the patient exist
@@ -332,7 +332,7 @@ public class PoliceStationMain {
                             lName = scanner.next();
                             boolean patientExistDes = false;
                             Suspect changeSuspect = null;
-                            for (RecordsAndAdministration dep : policeStation.getMedicalDepartments()) {
+                            for (RecordsAndAdministration dep : policeStation.getDepartments()) {
                                 for (Suspect each : dep.getPatients()) {
                                     if (each.getLastName().equals(lName) && each.getFirstName().equals(fName)) {
                                         patientExistDes = true;     // set if the patient exist
@@ -349,7 +349,7 @@ public class PoliceStationMain {
                             }
                             break;
                         case 6:
-                            System.out.println("Suspect list: " + policeStation.getPatients());
+                            System.out.println("Suspect list: " + policeStation.getSuspects());
                     }
 
                 } else if (action == 6) {  // Staff

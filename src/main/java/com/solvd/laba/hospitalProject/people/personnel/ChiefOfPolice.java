@@ -63,7 +63,7 @@ public class ChiefOfPolice extends Staff {
                 "qualification='" + qualification + '\'' +
                 ", completedRequiredTraining=" + completedRequiredTraining +
                 ", salary=" + salary +
-                ", age=" + age +
+                ", clearanceLevel=" + clearanceLevel +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", IdentificationNumber='" + IdentificationNumber + '\'' +

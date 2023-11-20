@@ -22,23 +22,23 @@ public class PoliceStation implements Displayable, Printable {
     private final String Location;
 
     private List<PoliceGarage> policeGarages;
-    private List<PatrolDepartment> pharmacies;
-    private List<ForensicLaboratory> laboratories;
+    private List<PatrolDivision> patrolDivisions;
+    private List<ForensicLaboratory> forensicLaboratories;
     private List<RecordsAndAdministration> recordsAndAdministrations;
 
     private Set<Suspect> suspects;
     private List<Staff> staff;
 
 
-    public PoliceStation(String name, String location, List<RecordsAndAdministration> recordsAndAdministrations, List<PoliceGarage> policeGarages, List<PatrolDepartment> pharmacies, List<ForensicLaboratory> laboratories, Set<Suspect> suspects, List<Staff> staff) {
+    public PoliceStation(String name, String location, List<RecordsAndAdministration> recordsAndAdministrations, List<PoliceGarage> policeGarages, List<PatrolDivision> patrolDivisions, List<ForensicLaboratory> forensicLaboratories, Set<Suspect> suspects, List<Staff> staff) {
 
-        LOGGER.info("Create a new PoliceStation");
+        LOGGER.info("Create a new Police Station");
         Name = name;
         Location = location;
 
         this.policeGarages = policeGarages;
-        this.laboratories = laboratories;
-        this.pharmacies = pharmacies;
+        this.forensicLaboratories = forensicLaboratories;
+        this.patrolDivisions = patrolDivisions;
         this.recordsAndAdministrations = recordsAndAdministrations;
 
         this.suspects = suspects;
@@ -50,8 +50,8 @@ public class PoliceStation implements Displayable, Printable {
         Location = location;
 
         this.policeGarages = new ArrayList<>();
-        this.laboratories = new ArrayList<>();
-        this.pharmacies = new ArrayList<>();
+        this.forensicLaboratories = new ArrayList<>();
+        this.patrolDivisions = new ArrayList<>();
         this.recordsAndAdministrations = new ArrayList<>();
         this.suspects = new HashSet<>();
         this.staff = new ArrayList<>();
@@ -59,25 +59,25 @@ public class PoliceStation implements Displayable, Printable {
 
 
 
-    public List<PoliceGarage> getCafeterias() { return this.policeGarages; }
+    public List<PoliceGarage> getPoliceGarages() { return this.policeGarages; }
 
-    public List<PatrolDepartment> getPharmacies() { return this.pharmacies; }
+    public List<PatrolDivision> getPatrolDepartments() { return this.patrolDivisions; }
 
-    public List<ForensicLaboratory> getLaboratories() { return this.laboratories; }
+    public List<ForensicLaboratory> getForensicLaboratories() { return this.forensicLaboratories; }
 
-    public List<RecordsAndAdministration> getMedicalDepartments() { return this.recordsAndAdministrations; }
+    public List<RecordsAndAdministration> getDepartments() { return this.recordsAndAdministrations; }
 
 
     public void setCafeterias(List<PoliceGarage> policeGarages) {
         this.policeGarages = policeGarages;
     }
 
-    public void setPharmacies(List<PatrolDepartment> pharmacies) {
-        this.pharmacies = pharmacies;
+    public void setPatrolDepartments(List<PatrolDivision> patrolDivisions) {
+        this.patrolDivisions = patrolDivisions;
     }
 
-    public void setLaboratories(List<ForensicLaboratory> laboratories) {
-        this.laboratories = laboratories;
+    public void setForensicLaboratories(List<ForensicLaboratory> forensicLaboratories) {
+        this.forensicLaboratories = forensicLaboratories;
     }
 
     public void setMedicalDepartments(List<RecordsAndAdministration> recordsAndAdministrations) {
@@ -85,19 +85,19 @@ public class PoliceStation implements Displayable, Printable {
     }
 
 
-    public void addPharmacy(PatrolDepartment patrolDepartment) { this.pharmacies.add(patrolDepartment); }
+    public void addPatrolDivision(PatrolDivision patrolDivision) { this.patrolDivisions.add(patrolDivision); }
 
-    public void addLaboratory(ForensicLaboratory lab) { this.laboratories.add(lab); }
+    public void addForensicLaboratory(ForensicLaboratory lab) { this.forensicLaboratories.add(lab); }
 
-    public void addCafeteria(PoliceGarage cafe) { this.policeGarages.add(cafe); }
+    public void addPoliceGarage(PoliceGarage policeGarage) { this.policeGarages.add(policeGarage); }
 
-    public void addMedicalDepartment(RecordsAndAdministration medDep) { this.recordsAndAdministrations.add(medDep); }
+    public void addRecordsAndAdministration(RecordsAndAdministration recordsAndAdministration) { this.recordsAndAdministrations.add(recordsAndAdministration); }
 
-    public void addPatient(Suspect newSuspect) {this.suspects.add(newSuspect); }
+    public void addSuspect(Suspect newSuspect) {this.suspects.add(newSuspect); }
 
-    public void dischargePatient(Suspect suspect) {this.suspects.remove(suspect); }
+    public void releaseFromJail(Suspect suspect) {this.suspects.remove(suspect); }
 
-    public void addEmployee(Staff staff) {
+    public void addStaff(Staff staff) {
         this.staff.add(staff);
     }
 
@@ -108,19 +108,19 @@ public class PoliceStation implements Displayable, Printable {
 
 
 
-    public Set<Suspect> getPatients() {   // return list of suspects
+    public Set<Suspect> getSuspects() {   // return list of suspects
         return suspects;
     }
 
-    public void setPatients(Set<Suspect> suspects) {    //
+    public void setSuspects(Set<Suspect> suspects) {    //
         this.suspects = suspects;
     }
 
-    public List<Staff> getEmployees() {
+    public List<Staff> getStaff() {
         return staff;
     }
 
-    public void setEmployees(List<Staff> staff) {
+    public void setStaff(List<Staff> staff) {
         this.staff = staff;
     }
 
@@ -169,8 +169,8 @@ public class PoliceStation implements Displayable, Printable {
                 "Name='" + Name + '\'' +
                 ", Location='" + Location + '\'' +
                 ", policeGarages=" + policeGarages +
-                ", pharmacies=" + pharmacies +
-                ", laboratories=" + laboratories +
+                ", patrolDivisions=" + patrolDivisions +
+                ", forensicLaboratories=" + forensicLaboratories +
                 ", recordsAndAdministrations=" + recordsAndAdministrations +
                 ", suspects=" + suspects +
                 ", staff=" + staff +
