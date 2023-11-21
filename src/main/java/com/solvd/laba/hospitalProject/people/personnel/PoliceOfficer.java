@@ -14,8 +14,8 @@ public class PoliceOfficer extends Staff implements IPerformTask {
     private String specialization;
     private String rank;
 
-    public PoliceOfficer(String firstName, String lastName, String identificationNumber, Integer salary, Integer age, String specialization, String rank) throws InvalidPersonException {
-        super(firstName, lastName, identificationNumber, salary, age);
+    public PoliceOfficer(String firstName, String lastName, String identificationNumber, Integer salary, Integer clearanceLevel, String specialization, String rank) throws InvalidPersonException {
+        super(firstName, lastName, identificationNumber, salary, clearanceLevel);
         this.specialization = specialization;
         this.rank = rank;
         LOGGER.info("Create a new Police Officer");

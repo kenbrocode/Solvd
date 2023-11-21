@@ -57,19 +57,19 @@ public abstract class Person {
     }
 
 
-    public void setFullName(String fullName) throws InvalidPersonException {              // Boris Jones
+    public void setFullName(String fullName) throws InvalidPersonException {              // Peter Parker
 
         String[] names = fullName.split(" ");
         setFirstName(names[0]);
         setLastName(names[1]);
     }
 
-    public final String getPhoneNumber() {
+    public final String getIdentificationNumber() {
         return IdentificationNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.IdentificationNumber = phoneNumber;
+    public void setIdentificationNumber(String identificationNumber) {
+        this.IdentificationNumber = identificationNumber;
     }
 
     @Override

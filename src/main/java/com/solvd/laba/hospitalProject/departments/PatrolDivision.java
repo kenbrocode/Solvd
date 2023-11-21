@@ -36,7 +36,7 @@ public class PatrolDivision extends Department {
     }
 
 
-    public void addPharmInventory(String name, int quantity ) {
+    public void addPatrolDepartmentInventory(String name, int quantity ) {
         LOGGER.info("Adding new inventory " + name + " into pharmacy inventory list");
         inventory.put(name, quantity);
     }

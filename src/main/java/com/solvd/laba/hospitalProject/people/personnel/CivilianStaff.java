@@ -11,13 +11,13 @@ public class CivilianStaff extends Staff {
 
     public static final Logger LOGGER = LogManager.getLogger(PoliceStation.class);
     private int shift;
-    private String category;
+    private String type;
     private Boolean hasEducation;
 
-    public CivilianStaff(String firstName, String lastName, String phoneNumber, Integer salary, Integer age, int shift, String category, Boolean hasEducation) throws InvalidPersonException {
-        super(firstName, lastName, phoneNumber, salary, age);
+    public CivilianStaff(String firstName, String lastName, String identificationNumber, Integer salary, Integer clearanceLevel, int shift, String type, Boolean hasEducation) throws InvalidPersonException {
+        super(firstName, lastName, identificationNumber, salary, clearanceLevel);
         this.shift = shift;
-        this.category = category;
+        this.type = type;
         this.hasEducation = hasEducation;
     }
 
@@ -29,12 +29,12 @@ public class CivilianStaff extends Staff {
         this.shift = shift;
     }
 
-    public String getCategory() {
-        return category;
+    public String getType() {
+        return type;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Boolean getCertified() {
@@ -51,19 +51,19 @@ public class CivilianStaff extends Staff {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         CivilianStaff civilianStaff = (CivilianStaff) o;
-        return shift == civilianStaff.shift && Objects.equals(category, civilianStaff.category) && Objects.equals(hasEducation, civilianStaff.hasEducation);
+        return shift == civilianStaff.shift && Objects.equals(type, civilianStaff.type) && Objects.equals(hasEducation, civilianStaff.hasEducation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), shift, category, hasEducation);
+        return Objects.hash(super.hashCode(), shift, type, hasEducation);
     }
 
     @Override
     public String toString() {
         return "CivilianStaff{" +
                 "shift=" + shift +
-                ", category='" + category + '\'' +
+                ", type='" + type + '\'' +
                 ", hasEducation=" + hasEducation +
                 ", salary=" + salary +
                 ", clearanceLevel=" + clearanceLevel +
@@ -75,7 +75,7 @@ public class CivilianStaff extends Staff {
 
     @Override
     public void work() {
-        LOGGER.info("Can work as a nurse.");
+        LOGGER.info("Can work as a civilian staff member.");
     }
 
     @Override

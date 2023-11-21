@@ -17,11 +17,11 @@ public class RecordsAndAdministration extends Department{
 
     public static final Logger LOGGER = LogManager.getLogger(PoliceStation.class);
     private Set<Suspect> suspects;
-    private boolean hasAttorneysAssigned;
+    private boolean audited;
 
-    public RecordsAndAdministration(String name, LocalDate establishedDate, boolean hasAttorneysAssigned) {
+    public RecordsAndAdministration(String name, LocalDate establishedDate, boolean audited) {
         super(name, establishedDate);
-        this.hasAttorneysAssigned = hasAttorneysAssigned;
+        this.audited = audited;
         this.suspects = new HashSet<>();
         LOGGER.info("Created new Record");
     }
@@ -29,7 +29,7 @@ public class RecordsAndAdministration extends Department{
 
     public Set<Suspect> getPatients() { return suspects; }
 
-    public void setPatients(Set<Suspect> suspects) {
+    public void setSuspects(Set<Suspect> suspects) {
         this.suspects = suspects;
     }
 
@@ -39,12 +39,12 @@ public class RecordsAndAdministration extends Department{
 
     public void removePatient(Suspect suspect) { this.suspects.remove(suspect); }
 
-    public boolean isHasAttorneysAssigned() {
-        return hasAttorneysAssigned;
+    public boolean isAudited() {
+        return audited;
     }
 
-    public void setHasAttorneysAssigned(boolean hasAttorneysAssigned) {
-        this.hasAttorneysAssigned = hasAttorneysAssigned;
+    public void setAudited(boolean audited) {
+        this.audited = audited;
     }
 
     @Override
@@ -58,12 +58,12 @@ public class RecordsAndAdministration extends Department{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         RecordsAndAdministration that = (RecordsAndAdministration) o;
-        return hasAttorneysAssigned == that.hasAttorneysAssigned && Objects.equals(suspects, that.suspects);
+        return audited == that.audited && Objects.equals(suspects, that.suspects);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), suspects, hasAttorneysAssigned);
+        return Objects.hash(super.hashCode(), suspects, audited);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class RecordsAndAdministration extends Department{
         return "RecordsAndAdministration{" +
                 "name='" + name + '\'' +
                 ", establishedDate=" + establishedDate +
-                ", hasAttorneysAssigned=" + hasAttorneysAssigned +
+                ", audited=" + audited +
                 ", suspects=" + suspects +
                 ", staff=" + staff +
                 '}';

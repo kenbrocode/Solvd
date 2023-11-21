@@ -14,8 +14,8 @@ public class ChiefOfPolice extends Staff {
     protected String qualification;
     protected boolean completedRequiredTraining;
 
-    public ChiefOfPolice(String firstName, String lastName, String phoneNumber, Integer salary, Integer age, String qualification, boolean completedRequiredTraining) throws InvalidPersonException {
-        super(firstName, lastName, phoneNumber, salary, age);
+    public ChiefOfPolice(String firstName, String lastName, String identificationNumber, Integer salary, Integer clearanceLevel, String qualification, boolean completedRequiredTraining) throws InvalidPersonException {
+        super(firstName, lastName, identificationNumber, salary, clearanceLevel);
         this.qualification = qualification;
         this.completedRequiredTraining = completedRequiredTraining;
     }

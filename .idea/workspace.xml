@@ -6,17 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="36fc5f06-08ff-4e6e-a67d-850e59e78498" name="Changes" comment="Initial">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStationLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStationLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStationMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStationMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStationUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStationUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/PatrolDepartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/PatrolDivision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/PatrolDivision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/PatrolDivision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/RecordsAndAdministration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/RecordsAndAdministration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/nonpersonnel/Suspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/nonpersonnel/Suspect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/ChiefOfPolice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/ChiefOfPolice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/CivilianStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/CivilianStaff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/PoliceOfficer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/PoliceOfficer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/Staff.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700466124737</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Initial">
+      <option name="closed" value="true" />
+      <created>1700468754881</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700468754881</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

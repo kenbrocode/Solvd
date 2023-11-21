@@ -13,9 +13,9 @@ public final class Suspect extends Person implements Payable {
     private static int jailedSuspectCount;
 
 
-    public Suspect(String firstName, String lastName, String phoneNumber, String crime) throws InvalidPersonException {
+    public Suspect(String firstName, String lastName, String identificationNumber, String crime) throws InvalidPersonException {
 
-        super(firstName, lastName, phoneNumber);
+        super(firstName, lastName, identificationNumber);
         this.crime = crime;
 
         jailedSuspectCount++;
