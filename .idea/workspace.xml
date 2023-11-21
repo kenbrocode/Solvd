@@ -7,13 +7,6 @@
     <list default="true" id="36fc5f06-08ff-4e6e-a67d-850e59e78498" name="Changes" comment="Initial">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStationMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/PoliceStationMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/PatrolDivision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/PatrolDivision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/RecordsAndAdministration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/departments/RecordsAndAdministration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/nonpersonnel/Suspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/nonpersonnel/Suspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/ChiefOfPolice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/ChiefOfPolice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/CivilianStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/CivilianStaff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/PoliceOfficer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/hospitalProject/people/personnel/PoliceOfficer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,19 +25,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/L-7490/IdeaProjects/Solvd",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/L-7490/IdeaProjects/Solvd&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\L-7490\IdeaProjects\Solvd" />
@@ -71,11 +64,11 @@
       </method>
     </configuration>
     <configuration name="PoliceStationMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.solvd.laba.hospitalProject.PoliceStationMain" />
+      <option name="MAIN_CLASS_NAME" value="com.solvd.laba.PoliceProject.PoliceStationMain" />
       <module name="Solvd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.solvd.laba.hospitalProject.*" />
+          <option name="PATTERN" value="com.solvd.laba.PoliceProject.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700468754881</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Initial">
+      <option name="closed" value="true" />
+      <created>1700562136203</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700562136203</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
